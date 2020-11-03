@@ -1,0 +1,6 @@
+/* Styling the default Gatsby main wrapper */
+#gatsby-focus-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
