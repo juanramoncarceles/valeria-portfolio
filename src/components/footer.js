@@ -1,18 +1,11 @@
-import React from "react"
-import styled from "@emotion/styled"
+import React from "react";
 
-const Root = styled.footer`
-  margin-top: 2rem;
-  padding: 1rem;
-  text-align: center;
-  color: #ccc;
-  background-color: #171717;
-`
+import footerStyles from "./footer.module.css";
 
 const Footer = () => (
-  <Root>
-    <p>© {new Date().getFullYear()}, Built with by Valeria Lovato</p>
-  </Root>
-)
+  <footer className={footerStyles.root}>
+    <p>© {new Date().getFullYear()}, Built by Valeria Lovato</p>
+  </footer>
+);
 
-export default Footer
+export default Footer;
