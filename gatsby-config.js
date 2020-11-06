@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "portfolio",
-    description: "Valeria Lovato's design portfolio. Checkout my architecture and UI UX projects.",
-    author: "@valerialovato",
+    title: "Valeria Lovato",
+    description: "Valeria Lovato's architecture portfolio.",
+    author: "Valeria Lovato",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -66,4 +66,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
