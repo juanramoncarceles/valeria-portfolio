@@ -2,13 +2,10 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 
 const Blog = ({ data }) => (
-  <Layout>
-    <SEO title="Blog" />
+  <Layout pageTitle="blog">
     <h1>Blog</h1>
-    <Link to="/">Go back to the homepage</Link>
     <p>This is the list of posts</p>
     <h4>{data.allMarkdownRemark.totalCount} posts</h4>
     {data.allMarkdownRemark.nodes.map(node => (
@@ -22,11 +19,14 @@ const Blog = ({ data }) => (
       </div>
     ))}
   </Layout>
-)
+);
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: {fields: {collection: {eq: "post"}}}) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { collection: { eq: "post" } } }
+    ) {
       totalCount
       nodes {
         id
@@ -38,7 +38,7 @@ export const query = graphql`
           slug
         }
         excerpt
-      }      
+      }
     }
   }
 `;

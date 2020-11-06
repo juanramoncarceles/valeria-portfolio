@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
 import ThemeContext from "../context/ThemeContext";
+import SEO from "./seo";
 import Header from "./header";
 import Footer from "./footer";
 
@@ -10,7 +11,7 @@ import "../styles/layout.css";
 import "../styles/main.css";
 import layoutStyles from "./layout.module.css";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, pageTitle, fullHeightHeader }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -21,6 +22,11 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const capitalize = str => {
+    const strTrimmed = str.trim();
+    return strTrimmed[0].toUpperCase() + strTrimmed.slice(1);
+  };
+
   return (
     <ThemeContext.Consumer>
       {theme => (
@@ -28,7 +34,12 @@ const Layout = ({ children }) => {
           id={layoutStyles.layoutWrapper}
           className={theme.dark ? "dark" : "light"}
         >
-          <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+          <SEO title={capitalize(pageTitle)} />
+          <Header
+            siteTitle={data.site.siteMetadata.title}
+            pageTitle={pageTitle}
+            fullHeightHeader={fullHeightHeader}
+          />
           <main
             style={{
               margin: `0 auto`,

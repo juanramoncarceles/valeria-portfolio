@@ -1,0 +1,47 @@
+.root {
+  margin-bottom: 1.5rem;
+}
+
+.root.full-height {
+  min-height: 100vh;
+  position: relative;
+  background-color: grey;
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-title {
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.site-title > a {
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-right: 3rem;
+  font-size: 0.9em;
+}
+
+.nav > a:not(:first-child) {
+  margin-left: 2rem;
+}
+
+.page-title {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 3rem;
+  font-size: 5em;
+  color: #fff;
+}
