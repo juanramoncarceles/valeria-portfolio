@@ -4,20 +4,23 @@ import Img from "gatsby-image";
 
 import Layout from "../components/layout";
 
-const Post = ({ data: { markdownRemark: post }}) => {
-
-  const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid;
+const Post = ({
+  data: {
+    markdownRemark: { html, frontmatter },
+  },
+}) => {
+  const featuredImgFluid = frontmatter.featuredImage.sharp.fluid;
 
   return (
-    <Layout>
+    <Layout pageTitle={frontmatter.title}>
       <div>
-        <h1>{post.frontmatter.title}</h1>
+        <h1>{frontmatter.title}</h1>
         <Img fluid={featuredImgFluid} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query($id: String!) {
@@ -26,7 +29,7 @@ export const query = graphql`
       frontmatter {
         title
         featuredImage {
-          childImageSharp {
+          sharp: childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
             }

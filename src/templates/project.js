@@ -4,8 +4,7 @@ import Img from "gatsby-image";
 
 import Layout from "../components/layout";
 
-const Project = ({ data: { markdownRemark: project }}) => {
-
+const Project = ({ data: { markdownRemark: project } }) => {
   const {
     title,
     subtitle,
@@ -17,16 +16,16 @@ const Project = ({ data: { markdownRemark: project }}) => {
   } = project.frontmatter;
 
   return (
-    <Layout>
+    <Layout pageTitle={title}>
       <h1>{title}</h1>
-      <h2>{subtitle}</h2>
-      <p>{excerpt}</p>
-      <p>{body}</p>
-      <p>{credits ?? ""}</p>
-      <Img fluid={featuredImage.childImageSharp.fluid} />
-      {images && images.length > 0 ? images.map(img => (
-        <Img fluid={img.childImageSharp.fluid} key={img.id} />
-      )) : ""}
+      {subtitle ? <h2>{subtitle}</h2> : ""}
+      {excerpt ? <p>{excerpt}</p> : ""}
+      {body ? <p>{body}</p> : ""}
+      {credits ? <p>{credits}</p> : ""}
+      {featuredImage ? <Img fluid={featuredImage.sharp.fluid} /> : ""}
+      {images && images.length > 0
+        ? images.map(img => <Img fluid={img.sharp.fluid} key={img.id} />)
+        : ""}
     </Layout>
   );
 };
@@ -41,7 +40,7 @@ export const query = graphql`
         body
         credits
         featuredImage {
-          childImageSharp {
+          sharp: childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
             }
@@ -49,7 +48,7 @@ export const query = graphql`
         }
         images {
           id
-          childImageSharp {
+          sharp: childImageSharp {
             fluid(maxWidth: 600) {
               ...GatsbyImageSharpFluid
             }
@@ -61,19 +60,3 @@ export const query = graphql`
 `;
 
 export default Project;
-
-
-
-/*
-html
-      frontmatter {
-        title
-        featuredImage {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-*/
