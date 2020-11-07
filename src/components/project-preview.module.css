@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 3rem;
+}
+
+.root.odd {
+  background-color: aquamarine;
+}
+
+.img {
+  width: 45%;
+  max-width: 800px;
+}
+
+.data-container {
+  width: 35%;
+}
