@@ -6,7 +6,7 @@
 }
 
 .root.odd {
-  background-color: aquamarine;
+  background-color: rgb(240, 240, 240);
 }
 
 .img {
@@ -14,6 +14,34 @@
   max-width: 800px;
 }
 
+.root.odd > .img {
+  order: 1;
+}
+
 .data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 35%;
+}
+
+.data-container > h3 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.data-container > h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.data-container > p {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+
+.data-container > a {
+  font-size: 1.3rem;
+  font-weight: bold;
 }

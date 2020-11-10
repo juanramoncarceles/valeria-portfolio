@@ -21,7 +21,7 @@ const ProjectPreview = ({ project, position }) => {
   return (
     <article
       className={`
-      ${projPreviewStyle.root} ${position % 2 === 0 ? projPreviewStyle.odd : ""}
+      ${projPreviewStyle.root} ${position % 2 === 1 ? projPreviewStyle.odd : ""}
     `}
     >
       {project.featuredImage ? (
