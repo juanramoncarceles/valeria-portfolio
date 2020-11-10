@@ -9,13 +9,9 @@ const Home = () => {
 
   return (
     <Layout pageTitle="portfolio" fullHeightHeader={true}>
-      <h3>Hi people</h3>
-      <p>Here go the projects</p>
-      <div>
-        {projects.map((project, i) => (
-          <ProjectPreview key={project.id} project={project} position={i} />
-        ))}
-      </div>
+      {projects.map((project, i) => (
+        <ProjectPreview key={project.id} project={project} position={i} />
+      ))}
     </Layout>
   );
 };
