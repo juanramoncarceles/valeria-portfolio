@@ -11,7 +11,7 @@ import "../styles/layout.css";
 import "../styles/main.css";
 import layoutStyles from "./layout.module.css";
 
-const Layout = ({ children, pageTitle, fullHeightHeader }) => {
+const Layout = ({ children, pageTitle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -35,11 +35,7 @@ const Layout = ({ children, pageTitle, fullHeightHeader }) => {
           className={theme.dark ? "dark" : "light"}
         >
           <SEO title={capitalize(pageTitle)} />
-          <Header
-            siteTitle={data.site.siteMetadata.title}
-            pageTitle={pageTitle}
-            fullHeightHeader={fullHeightHeader}
-          />
+          <Header siteTitle={data.site.siteMetadata.title} />
           <main
             style={{
               flexGrow: 1,

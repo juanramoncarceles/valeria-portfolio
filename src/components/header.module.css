@@ -1,14 +1,7 @@
 .root {
-  margin-bottom: 1.5rem;
-}
-
-.root.full-height {
-  min-height: 100vh;
-  position: relative;
-  background-color: grey;
-  /* background-position: center; */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 
 .nav-container {
@@ -36,12 +29,4 @@
 
 .nav > a:not(:first-child) {
   margin-left: 2rem;
-}
-
-.page-title {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 3rem;
-  font-size: 5em;
-  color: #fff;
 }

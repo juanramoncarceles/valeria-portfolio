@@ -5,18 +5,14 @@ import PropTypes from "prop-types";
 import ThemeContext from "../context/ThemeContext";
 import headerStyles from "./header.module.css";
 
-const Header = ({ siteTitle, pageTitle, fullHeightHeader }) => (
+const Header = ({ siteTitle }) => (
   <ThemeContext.Consumer>
     {theme => (
-      <header
-        className={`${headerStyles.root} ${
-          fullHeightHeader ? headerStyles.fullHeight : ""
-        }`}
-      >
+      <header className={headerStyles.root}>
         <div className={headerStyles.navContainer}>
-          <h1 className={headerStyles.siteTitle}>
-            <Link to="/">{siteTitle.toLowerCase()}</Link>
-          </h1>
+          <Link to="/" className={headerStyles.siteTitle}>
+            {siteTitle.toLowerCase()}
+          </Link>
           <nav className={headerStyles.nav}>
             <Link to="/">portfolio</Link>
             <Link to="/about/">about me</Link>
@@ -24,7 +20,6 @@ const Header = ({ siteTitle, pageTitle, fullHeightHeader }) => (
             <Link to="/blog/">blog</Link>
           </nav>
         </div>
-        <h2 className={headerStyles.pageTitle}>{pageTitle}</h2>
         {false ? (
           <button className="dark-switcher" onClick={theme.toggleDark}>
             {theme.dark ? <span>Light mode ☀</span> : <span>Dark mode ☾</span>}
@@ -39,12 +34,6 @@ const Header = ({ siteTitle, pageTitle, fullHeightHeader }) => (
 
 Header.propTypes = {
   siteTitle: PropTypes.string.isRequired,
-  pageTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  pageTitle: "",
-  fullHeightHeader: false,
 };
 
 export default Header;
