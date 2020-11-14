@@ -6,12 +6,13 @@ import ThemeContext from "../context/ThemeContext";
 import SEO from "./seo";
 import Header from "./header";
 import Footer from "./footer";
+import FullHeightHeading from "./full-height-heading";
 
 import "../styles/layout.css";
 import "../styles/main.css";
 import layoutStyles from "./layout.module.css";
 
-const Layout = ({ children, pageTitle }) => {
+const Layout = ({ children, pageTitle, fullHeightHeading, cssClass }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -35,12 +36,24 @@ const Layout = ({ children, pageTitle }) => {
           className={theme.dark ? "dark" : "light"}
         >
           <SEO title={capitalize(pageTitle)} />
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header
+            siteTitle={data.site.siteMetadata.title}
+            absolute={!!fullHeightHeading}
+          />
           <main
             style={{
               flexGrow: 1,
             }}
+            className={cssClass}
           >
+            {fullHeightHeading ? (
+              <FullHeightHeading
+                pageTitle={pageTitle}
+                bgimg={fullHeightHeading.bgimg}
+              />
+            ) : (
+              ""
+            )}
             {children}
           </main>
           <Footer />
@@ -52,6 +65,14 @@ const Layout = ({ children, pageTitle }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  pageTitle: PropTypes.string.isRequired,
+  fullHeightHeading: PropTypes.object,
+  cssClass: PropTypes.string,
+};
+
+Layout.defaultProps = {
+  fullHeightHeading: undefined,
+  cssClass: "",
 };
 
 export default Layout;
