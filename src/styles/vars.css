@@ -1,5 +1,7 @@
 :root {
   --color-black: #171717;
-  --text-color: #171717;
-  --text-color-inverted: #ccc;
+  --text-color: rgb(29, 29, 29);
+  --text-color-inverted: rgb(226, 226, 226);
+  --neutral-200: rgb(202, 202, 202);
+  --neutral-500: rgb(146, 146, 146);
 }
