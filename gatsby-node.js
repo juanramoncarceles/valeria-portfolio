@@ -3,7 +3,8 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === "MarkdownRemark") { // If using MDX change for "Mdx".
+  if (node.internal.type === "MarkdownRemark") {
+    // If using MDX change for "Mdx".
     const parent = getNode(node.parent);
     const collection = parent.sourceInstanceName;
     // The slug is created as the name of the file or parent folder in case of files called index.
@@ -21,21 +22,19 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: slug,
     });
   }
-}
+};
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  
+
   // THE POSTS
   const {
     data: {
-      allMarkdownRemark: {
-        nodes: posts
-      }
-    }
+      allMarkdownRemark: { nodes: posts },
+    },
   } = await graphql(`
     query {
-      allMarkdownRemark(filter: {fields: {collection: {eq: "post"}}}) {
+      allMarkdownRemark(filter: { fields: { collection: { eq: "post" } } }) {
         nodes {
           id
           fields {
@@ -46,7 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  posts.forEach( post => {
+  posts.forEach(post => {
     createPage({
       path: `blog${post.fields.slug}`, // Another option is to use the frontmatter title to create the slug parsing it.
       component: path.resolve("./src/templates/post.js"),
@@ -56,14 +55,11 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-
   // THE PROJECTS
   const {
     data: {
-      allMarkdownRemark: {
-        nodes: projects
-      }
-    }
+      allMarkdownRemark: { nodes: projects },
+    },
   } = await graphql(`
     query {
       allMarkdownRemark(
@@ -81,8 +77,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  
-  projects.forEach( project => {
+
+  projects.forEach(project => {
     createPage({
       path: `project${project.fields.slug}`,
       component: path.resolve("./src/templates/project.js"),
@@ -91,4 +87,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-}
+};
