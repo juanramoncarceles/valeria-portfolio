@@ -1,0 +1,10 @@
+Bugs:
+
+Features:
+    ☐ Make the excerpt automatic from the body text, by a max amount of characters?
+    ☐ Multilingual
+    ☐ Add a dark theme.
+
+Changes: 
+    ☐ Look for an alternative for background images to auto optimize them.
+        Use a regular image placed absolute or something like this: https://www.gatsbyjs.com/plugins/gatsby-background-image/
