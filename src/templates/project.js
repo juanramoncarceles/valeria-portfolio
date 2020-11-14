@@ -31,10 +31,10 @@ const Project = ({
         ""
       )}
       <div className={projectStyles.textContent}>
-        <div className={projectStyles.titlesWrapper}>
+        <hgroup className={projectStyles.titlesWrapper}>
           <h1 className={projectStyles.mainTitle}>{title}</h1>
           {subtitle ? <h2>{subtitle}</h2> : ""}
-        </div>
+        </hgroup>
         {body ? <p className={projectStyles.description}>{body}</p> : ""}
       </div>
       <div className={projectStyles.imagesContainer}>
