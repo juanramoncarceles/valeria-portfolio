@@ -1,7 +1,21 @@
-.root {
+@import "../styles/vars.css";
+
+.root.above {
   position: absolute;
   width: 100%;
   z-index: 1;
+}
+
+.root.above a {
+  color: var(--text-color-inverted);
+}
+
+.root.default {
+  border-bottom: solid 1px var(--neutral-200);
+}
+
+.root.default a {
+  color: var(--neutral-500);
 }
 
 .nav-container {
@@ -27,6 +41,16 @@
   font-size: 0.9em;
 }
 
+.nav > a {
+  padding: 0.6rem;
+  text-decoration: none;
+}
+
+.nav > a[aria-current],
+.nav > a:hover {
+  text-decoration: underline;
+}
+
 .nav > a:not(:first-child) {
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
