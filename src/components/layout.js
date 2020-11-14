@@ -38,7 +38,7 @@ const Layout = ({ children, pageTitle, fullHeightHeading, cssClass }) => {
           <SEO title={capitalize(pageTitle)} />
           <Header
             siteTitle={data.site.siteMetadata.title}
-            absolute={!!fullHeightHeading}
+            above={!!fullHeightHeading}
           />
           <main
             style={{

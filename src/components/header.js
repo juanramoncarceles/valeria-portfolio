@@ -5,13 +5,13 @@ import PropTypes from "prop-types";
 import ThemeContext from "../context/ThemeContext";
 import headerStyles from "./header.module.css";
 
-const Header = ({ siteTitle, absolute }) => {
+const Header = ({ siteTitle, above }) => {
   return (
     <ThemeContext.Consumer>
       {theme => (
         <header
           className={`${headerStyles.root} ${
-            absolute ? headerStyles.above : headerStyles.default
+            above ? headerStyles.above : headerStyles.default
           }`}
         >
           <div className={headerStyles.navContainer}>
@@ -44,11 +44,11 @@ const Header = ({ siteTitle, absolute }) => {
 
 Header.propTypes = {
   siteTitle: PropTypes.string.isRequired,
-  absolute: PropTypes.bool,
+  above: PropTypes.bool,
 };
 
 Header.defaultProps = {
-  absolute: false,
+  above: false,
 };
 
 export default Header;
