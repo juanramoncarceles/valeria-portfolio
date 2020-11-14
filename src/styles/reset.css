@@ -12,9 +12,6 @@ mark {
   background-color: #ff0;
   color: #000;
 }
-small {
-  font-size: 80%;
-}
 sub,
 sup {
   font-size: 75%;
@@ -30,46 +27,6 @@ sup {
 }
 svg:not(:root) {
   overflow: hidden;
-}
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace;
-  font-size: 1em;
-}
-figure {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-hr {
-  box-sizing: content-box;
-  overflow: visible;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: calc(1.45rem - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
-  border: none;
-  height: 1px;
-}
-button,
-input,
-optgroup,
-select,
-textarea {
-  font: inherit;
-  margin: 0;
 }
 optgroup {
   font-weight: 700;
@@ -149,16 +106,6 @@ textarea {
   -webkit-appearance: button;
   font: inherit;
 }
-hgroup {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
 pre {
   margin-left: 0;
   margin-right: 0;
@@ -186,16 +133,6 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
 noscript {
   margin-left: 0;
   margin-right: 0;
@@ -208,37 +145,6 @@ noscript {
 }
 th {
   font-weight: bold;
-}
-li {
-  margin-bottom: calc(1.45rem / 2);
-}
-ol li {
-  padding-left: 0;
-}
-ul li {
-  padding-left: 0;
-}
-li > ol {
-  margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
-}
-li > ul {
-  margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
-}
-blockquote *:last-child {
-  margin-bottom: 0;
-}
-li *:last-child {
-  margin-bottom: 0;
-}
-p *:last-child {
-  margin-bottom: 0;
-}
-li > p {
-  margin-bottom: calc(1.45rem / 2);
 }
 code {
   font-size: 0.85rem;
