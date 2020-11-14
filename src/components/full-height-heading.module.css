@@ -1,4 +1,4 @@
-.root.full-height {
+.root {
   min-height: 100vh;
   position: relative;
   background-color: grey;
