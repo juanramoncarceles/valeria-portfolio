@@ -13,3 +13,19 @@ export const createElementIdFromSlug = str => {
     return "";
   }
 };
+
+/**
+ * @param {string} str The string to evaluate. It should follow this pattern /number-slug/ like /1-my-project/
+ * @returns number
+ */
+export const getNumberFromProjectName = str => {
+  const result = str.match(/^\/(\d)+-/);
+  if (result) {
+    return parseInt(result[1]);
+  } else {
+    console.error(
+      `[Utils] Project number could not be extracted from its name: "${str}".`
+    );
+    return null;
+  }
+};
