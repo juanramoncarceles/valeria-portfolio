@@ -8,7 +8,7 @@ import Header from "./header";
 import Footer from "./footer";
 import FullHeightHeading from "./full-height-heading";
 
-import "../styles/layout.css";
+import "../styles/reset.css";
 import "../styles/main.css";
 import layoutStyles from "./layout.module.css";
 
