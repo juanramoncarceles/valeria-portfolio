@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 
 import projPreviewStyle from "./project-preview.module.css";
 
-const ProjectPreview = ({ project, position }) => {
+const ProjectPreview = ({ project, position, id }) => {
   let subtitle;
   let excerpt;
 
@@ -23,6 +23,7 @@ const ProjectPreview = ({ project, position }) => {
       className={`
       ${projPreviewStyle.root} ${position % 2 === 1 ? projPreviewStyle.odd : ""}
     `}
+      id={id}
     >
       {project.featuredImage ? (
         <Img
@@ -45,10 +46,12 @@ const ProjectPreview = ({ project, position }) => {
 ProjectPreview.propTypes = {
   project: PropTypes.object.isRequired,
   position: PropTypes.number,
+  id: PropTypes.string,
 };
 
 ProjectPreview.defaultProps = {
   position: 0,
+  id: "",
 };
 
 export default ProjectPreview;
