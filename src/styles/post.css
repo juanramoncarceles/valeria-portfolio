@@ -1,0 +1,14 @@
+img {
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 900;
+  padding: 0 1rem 1.5rem;
+}
+
+iframe {
+  margin-bottom: 1.5rem;
+}
