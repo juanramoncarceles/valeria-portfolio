@@ -1,7 +1,6 @@
 @import "../styles/vars.css";
 
 .root {
-  margin-top: 2rem;
   padding: 1rem;
   text-align: center;
   color: var(--text-color-inverted);
