@@ -1,4 +1,5 @@
 ---
+visible: true
 title: "Ravalet 56"
 subtitle: "Rehabilitation of a carpenter warehouse to a private house."
 featuredImage: ./images/ravalet-featured.jpg
