@@ -7,7 +7,12 @@ const useProjects = () => {
     allMarkdownRemark: { nodes: allProjects },
   } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { fields: { collection: { eq: "project" } } }) {
+      allMarkdownRemark(
+        filter: {
+          fields: { collection: { eq: "project" } }
+          frontmatter: { visible: { ne: false } }
+        }
+      ) {
         nodes {
           id
           frontmatter {

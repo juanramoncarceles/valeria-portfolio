@@ -66,7 +66,12 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   } = await graphql(`
     query {
-      allMarkdownRemark(filter: {fields: {collection: {eq: "project"}}}) {
+      allMarkdownRemark(
+        filter: {
+          fields: { collection: { eq: "project" } }
+          frontmatter: { visible: { ne: false } }
+        }
+      ) {
         nodes {
           id
           fields {
