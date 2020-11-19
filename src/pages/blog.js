@@ -3,10 +3,12 @@ import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
 
+import blogStyles from "./blog.module.css";
+
 const Blog = ({ data }) => (
   <Layout pageTitle="blog">
     <h1>Blog</h1>
-    <p>This is the list of posts</p>
+    <p className={blogStyles.test}>This is the list of posts</p>
     <h4>{data.allMarkdownRemark.totalCount} posts</h4>
     {data.allMarkdownRemark.nodes.map(node => (
       <div key={node.id}>
