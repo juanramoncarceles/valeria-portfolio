@@ -62,7 +62,12 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
+        rel="stylesheet"
+      />
+    </Helmet>
   );
 };
 
