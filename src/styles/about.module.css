@@ -1,0 +1,122 @@
+@import "../styles/vars.css";
+
+.page-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 5rem auto 3rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.personal-description {
+  font-size: 1.4rem;
+  text-align: justify;
+  width: calc(360px + 4rem);
+  max-width: 400px;
+}
+
+.profile-pic {
+  width: 360px;
+  margin-right: 4rem;
+}
+
+.cv-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.cv-section {
+  margin-bottom: 4rem;
+}
+
+.cv-section > article:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.cv-subtitle {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+}
+
+.cv-item-wrapper {
+  display: flex;
+}
+
+.left-item {
+  margin: auto 0;
+  width: 40%;
+  font-size: 1rem;
+}
+
+.right-item {
+  width: 60%;
+  border-left: lightgrey solid 2px;
+  padding-left: 35px;
+}
+
+.right-item > h5 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.right-item > h6 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.right-item > ul {
+  padding-left: 0;
+  list-style-type: circle;
+}
+
+.right-item > ul > li {
+  padding-bottom: 0.8rem;
+}
+
+.download-cv {
+  display: block;
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+@media (max-width: 700px) {
+  .about-container {
+    flex-direction: column;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .profile-pic {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .about-container p {
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .cv-item-wrapper {
+    flex-direction: column;
+  }
+
+  .left-item {
+    width: 100%;
+    margin-bottom: 1.4rem;
+  }
+
+  .right-item {
+    width: 100%;
+  }
+}
