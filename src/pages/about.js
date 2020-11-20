@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 
 import Layout from "../components/layout";
 
-import aboutStyles from "../styles/about.module.css";
+import aboutStyles from "./about.module.css";
 
 import background from "../images/about-img.jpg";
 
