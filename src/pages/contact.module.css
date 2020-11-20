@@ -1,0 +1,20 @@
+.page-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 5rem auto 3rem;
+}
+
+.main-title {
+  margin-bottom: 1.2rem;
+  font-size: 3rem;
+}
+
+.address > *:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 650px) {
+  .page-container {
+    text-align: center;
+  }
+}
