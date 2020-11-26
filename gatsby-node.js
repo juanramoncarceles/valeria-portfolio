@@ -8,7 +8,17 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const parent = getNode(node.parent);
     const collection = parent.sourceInstanceName;
     // The slug is created as the name of the file or parent folder in case of files called index.
-    const slug = createFilePath({ node, getNode });
+    let slug = createFilePath({ node, getNode });
+    // TODO the slug could be created here instead of below: /lang/collection/slug/
+    // Regular expression to match the language sub extension.
+    const regexp = /\.(?<lang>[a-z]{2})$/;
+    const match = regexp.exec(parent.name);
+    let lang = "";
+    // If there is a lang code in the name of the file it is set as the value of the lang field to use it later for the slug
+    if (match && match["groups"].lang) {
+      slug = slug.replace(`${parent.name}/`, "");
+      lang = match["groups"].lang;
+    }
     // Add field 'collection' (type) to the node.
     createNodeField({
       node,
@@ -21,10 +31,16 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: "slug",
       value: slug,
     });
+    // Add field 'lang' to the node.
+    createNodeField({
+      node,
+      name: "lang",
+      value: lang,
+    });
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   // THE POSTS
@@ -72,6 +88,7 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           fields {
             slug
+            lang
           }
         }
       }
@@ -79,12 +96,14 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   projects.forEach(project => {
+    const projectPath = `${project.fields.lang}/project${project.fields.slug}`;
     createPage({
-      path: `project${project.fields.slug}`,
+      path: projectPath,
       component: path.resolve("./src/templates/project.js"),
       context: {
         id: project.id,
       },
     });
+    reporter.info(`Created project: ${projectPath}`);
   });
 };
