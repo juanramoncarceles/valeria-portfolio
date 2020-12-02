@@ -1,3 +1,43 @@
-.test {
-  color: red;
+.page-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 5rem auto 3rem;
+}
+
+.post-featured {
+  border-bottom: 1px solid;
+}
+
+.posts-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 1rem;
+}
+
+.post-image {
+  margin-bottom: 1rem;
+}
+
+.post-date {
+  display: block;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.post-title {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.post-excerpt {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.post-category {
+  display: block;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: rgb(15, 138, 110);
 }
