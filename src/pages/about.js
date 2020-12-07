@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { useIntl, Link } from "gatsby-plugin-intl";
 import Img from "gatsby-image";
 
 import Layout from "../components/layout";
@@ -9,8 +10,12 @@ import aboutStyles from "./about.module.css";
 import background from "../images/about-img.jpg";
 
 const About = ({ data: { file } }) => {
+  const intl = useIntl();
   return (
-    <Layout pageTitle="about me" fullHeightHeading={{ bgimg: background }}>
+    <Layout
+      pageTitle={intl.formatMessage({ id: "about.title" })}
+      fullHeightHeading={{ bgimg: background }}
+    >
       <div className={aboutStyles.pageContainer}>
         <section className={aboutStyles.aboutContainer}>
           <Img
@@ -19,15 +24,7 @@ const About = ({ data: { file } }) => {
             alt="Valeria Lovato's profile picture."
           />
           <p className={aboutStyles.personalDescription}>
-            Hi! I'm Valeria, an italian architect with 4 years of professional
-            experience. I've had the opportunity to work in different contexts,
-            as I've been living in The Netherlands and in Spain in the last
-            years. That's why I can say I really appreciate open minded people
-            and stimulating environments. As an architect and as a person, I
-            really care about sustainability and leaving my best possible
-            contribution on this planet. I also have a postgraduate diploma in
-            Web design, which I approached lately and I'm gradually mixing to my
-            profession.
+            {intl.formatMessage({ id: "about.description" })}
           </p>
         </section>
 
