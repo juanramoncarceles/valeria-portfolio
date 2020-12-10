@@ -1,8 +1,11 @@
 Bugs:
+    ☐ If a page / post / project doesn't have a translation in a laguage it shouldn't show that language in the select.
+    ☐ In the Blog page all posts in all languages are displayed. Instead they should be filtered by the current language.
+        Once this is done, force to always only show the posts in italian (regardless of the lang) since it will start with only italian posts.
+    ☐ Improve the current dark theme. For example when enabled in the home some post excerpts are not readable.
 
 Features:
     ☐ Make the excerpt automatic from the body text, by a max amount of characters?
-    ☐ Add a dark theme.
 
 Changes: 
     ☐ Look for an alternative for background images to auto optimize them.
