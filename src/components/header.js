@@ -37,9 +37,9 @@ const Header = ({ siteTitle, above }) => {
           {false ? (
             <button className="dark-switcher" onClick={theme.toggleDark}>
               {theme.dark ? (
-                <span>Light mode ☀</span>
-              ) : (
                 <span>Dark mode ☾</span>
+              ) : (
+                <span>Light mode ☀</span>
               )}
             </button>
           ) : (
