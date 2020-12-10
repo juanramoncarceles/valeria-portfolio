@@ -5,6 +5,8 @@ import Layout from "../components/layout";
 
 import blogStyles from "./blog.module.css";
 
+// TODO filter list of posts by language
+
 const Blog = ({ data }) => (
   <Layout pageTitle="blog">
     <h1>Blog</h1>
