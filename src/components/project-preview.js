@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 
+import ThemeContext from "../context/ThemeContext";
+
 import projPreviewStyle from "./project-preview.module.css";
 
 const ProjectPreview = ({ project, position, id }) => {
@@ -19,27 +21,33 @@ const ProjectPreview = ({ project, position, id }) => {
   else logMissingData(project.title, "excerpt");
 
   return (
-    <article
-      className={`
-      ${projPreviewStyle.root} ${position % 2 === 1 ? projPreviewStyle.odd : ""}
-    `}
-      id={id}
-    >
-      {project.featuredImage ? (
-        <Img
-          className={projPreviewStyle.img}
-          fluid={project.featuredImage.sharp.fluid}
-        />
-      ) : (
-        ""
+    <ThemeContext.Consumer>
+      {theme => (
+        <article
+          className={`${theme.dark ? projPreviewStyle.dark : ""}
+          ${projPreviewStyle.root} ${
+            position % 2 === 1 ? projPreviewStyle.odd : ""
+          }
+        `}
+          id={id}
+        >
+          {project.featuredImage ? (
+            <Img
+              className={projPreviewStyle.img}
+              fluid={project.featuredImage.sharp.fluid}
+            />
+          ) : (
+            ""
+          )}
+          <div className={projPreviewStyle.dataContainer}>
+            <h3>{project.title}</h3>
+            {subtitle ? <h4>{subtitle}</h4> : ""}
+            {excerpt ? <p>{project.excerpt}</p> : ""}
+            <Link to={`/project${project.slug}`}>more...</Link>
+          </div>
+        </article>
       )}
-      <div className={projPreviewStyle.dataContainer}>
-        <h3>{project.title}</h3>
-        {subtitle ? <h4>{subtitle}</h4> : ""}
-        {excerpt ? <p>{project.excerpt}</p> : ""}
-        <Link to={`/project${project.slug}`}>more...</Link>
-      </div>
-    </article>
+    </ThemeContext.Consumer>
   );
 };
 

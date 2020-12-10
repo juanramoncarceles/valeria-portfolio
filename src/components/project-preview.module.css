@@ -9,6 +9,10 @@
   background-color: rgb(240, 240, 240);
 }
 
+.dark.root.odd {
+  background-color: #1d1d1d;
+}
+
 .img {
   width: 45%;
   max-width: 800px;
