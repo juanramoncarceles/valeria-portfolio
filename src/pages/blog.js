@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
+import { Link as LinkIntl } from "gatsby-plugin-intl";
 
 import Layout from "../components/layout";
 
@@ -8,6 +9,14 @@ import blogStyles from "./blog.module.css";
 
 const Blog = ({ data: { allMarkdownRemark: posts } }) => {
   const lastPost = posts.nodes[0];
+
+  /*
+  IMPORTANT
+  Currently only posts in italian are displayed for all langs, if this changes
+  remove from below the /it part of the string and replace the Link elements from
+  gatsby for the LinkIntl from gatsby-plugin-intl
+  */
+  const basePostPath = "/it/blog";
 
   return (
     <Layout pageTitle="blog" cssClass={blogStyles.pageContainer}>
@@ -31,7 +40,7 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
             className={`${blogStyles.postWrapper} ${blogStyles.postFeatured}`}
           >
             <Link
-              to={`/blog${lastPost.fields.slug}`}
+              to={`${basePostPath}${lastPost.fields.slug}`}
               className={blogStyles.postImage}
             >
               <Img
@@ -46,15 +55,15 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
               {lastPost.frontmatter.date}
             </time>
             <Link
-              to={`/blog${lastPost.fields.slug}`}
+              to={`${basePostPath}${lastPost.fields.slug}`}
               className={blogStyles.postTitle}
             >
               <h2>{lastPost.frontmatter.title}</h2>
             </Link>
             <p className={blogStyles.postExcerpt}>{posts.nodes[0].excerpt}</p>
-            <Link to="/" className={blogStyles.postCategory}>
+            <LinkIntl to="/" className={blogStyles.postCategory}>
               Category
-            </Link>
+            </LinkIntl>
           </section>
 
           {posts.nodes.length > 1 ? (
@@ -67,7 +76,7 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
                       className={`${blogStyles.postWrapper} ${blogStyles.postListItem}`}
                     >
                       <Link
-                        to={`/blog${node.fields.slug}`}
+                        to={`${basePostPath}${node.fields.slug}`}
                         className={blogStyles.postImage}
                       >
                         <Img
@@ -82,15 +91,15 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
                         {node.frontmatter.date}
                       </time>
                       <Link
-                        to={`/blog${node.fields.slug}`}
+                        to={`${basePostPath}${node.fields.slug}`}
                         className={blogStyles.postTitle}
                       >
                         <h2>{node.frontmatter.title}</h2>
                       </Link>
                       <p className={blogStyles.postExcerpt}>{node.excerpt}</p>
-                      <Link to="/" className={blogStyles.postCategory}>
+                      <LinkIntl to="/" className={blogStyles.postCategory}>
                         Category
-                      </Link>
+                      </LinkIntl>
                     </article>
                   );
               })}
@@ -106,11 +115,20 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
   );
 };
 
+/*
+IMPORTANT:
+Currently the 'lang' value in the query filter has been hardcoded since there are
+only italian posts and those should be visible in all lang versions of the website.
+If in the future the posts have translations change the query to filter by the page
+language. To do so add ($language: String) after the query name, and replace the
+"it" with $language. The variable value is already being passed to the pageContext
+by the gatsby-plugin-intl .
+*/
 export const query = graphql`
-  query {
+  query allMdPost {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { collection: { eq: "post" } } }
+      filter: { fields: { collection: { eq: "post" }, lang: { eq: "it" } } }
     ) {
       totalCount
       nodes {
