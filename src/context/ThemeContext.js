@@ -1,9 +1,27 @@
 import React, { createContext, useEffect, useState, useContext } from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
 const ThemeContext = createContext();
 
 const ThemeContextProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
+
+  // Query to check if the dark theme should be available.
+  const {
+    site: {
+      siteMetadata: { darkThemeSwitcher },
+    },
+  } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            darkThemeSwitcher
+          }
+        }
+      }
+    `
+  );
 
   const supportsDarkMode = () =>
     window.matchMedia("(prefers-color-scheme: dark)").matches === true;
@@ -15,11 +33,13 @@ const ThemeContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const isDark = JSON.parse(localStorage.getItem("isDark"));
-    if (isDark) {
-      setIsDark(isDark);
-    } else if (supportsDarkMode()) {
-      setIsDark(true);
+    if (darkThemeSwitcher) {
+      const isDark = JSON.parse(localStorage.getItem("isDark"));
+      if (isDark) {
+        setIsDark(isDark);
+      } else if (supportsDarkMode()) {
+        setIsDark(true);
+      }
     }
   }, []);
 

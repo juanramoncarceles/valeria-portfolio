@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useIntl, Link } from "gatsby-plugin-intl";
+import { useStaticQuery, graphql } from "gatsby";
 
 import { useTheme } from "../context/ThemeContext";
 import headerStyles from "./header.module.css";
@@ -10,6 +11,23 @@ import Language from "./language";
 const Header = ({ siteTitle, above }) => {
   const intl = useIntl();
   const { isDark, toggleDark } = useTheme();
+
+  // Query to check if the dark theme should be available.
+  const {
+    site: {
+      siteMetadata: { darkThemeSwitcher },
+    },
+  } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            darkThemeSwitcher
+          }
+        }
+      }
+    `
+  );
 
   return (
     <header
@@ -29,7 +47,7 @@ const Header = ({ siteTitle, above }) => {
           <Language />
         </nav>
       </div>
-      {false ? (
+      {darkThemeSwitcher ? (
         <button className="dark-switcher" onClick={() => toggleDark()}>
           {isDark ? <span>Dark mode ☾</span> : <span>Light mode ☀</span>}
         </button>
