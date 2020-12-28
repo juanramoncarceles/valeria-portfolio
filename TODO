@@ -1,7 +1,5 @@
 Bugs:
     ☐ If a page / post / project doesn't have a translation in a laguage it shouldn't show that language in the select.
-    ☐ In the Blog page all posts in all languages are displayed. Instead they should be filtered by the current language.
-        Once this is done, force to always only show the posts in italian (regardless of the lang) since it will start with only italian posts.
     ☐ Improve the current dark theme. For example when enabled in the home some post excerpts are not readable.
 
 Features:
@@ -17,3 +15,5 @@ Changes:
 
 DONE:
     ✔ Multilingual @done(20-12-10 19:52)
+    ✔ In the Blog page all posts in all languages are displayed. Instead they should be filtered by the current language. @done(20-12-28 21:12)
+        Once this is done, force to always only show the posts in italian (regardless of the lang) since it will start with only italian posts.
