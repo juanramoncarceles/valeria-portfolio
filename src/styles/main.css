@@ -29,6 +29,14 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 ol,
 ul {
   margin: 0;
@@ -93,7 +101,7 @@ address {
   transition: all 0.6s ease;
   background-color: #fefefe;
 }
-.dark a,
+/* .dark a,
 .dark a:visited {
   color: #fff;
-}
+} */
