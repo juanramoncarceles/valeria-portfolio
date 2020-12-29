@@ -8,7 +8,6 @@ import Header from "./header";
 import Footer from "./footer";
 import FullHeightHeading from "./full-height-heading";
 
-import "../styles/reset.css";
 import "../styles/main.css";
 import layoutStyles from "./layout.module.css";
 
@@ -31,7 +30,11 @@ const Layout = ({ children, pageTitle, fullHeightHeading, cssClass }) => {
   };
 
   return (
-    <div id={layoutStyles.layoutWrapper} className={isDark ? "dark" : "light"}>
+    <div
+      className={`${layoutStyles.layoutWrapper} ${
+        isDark ? layoutStyles.dark : ""
+      }`}
+    >
       <SEO title={capitalize(pageTitle)} />
       <Header
         siteTitle={data.site.siteMetadata.title}

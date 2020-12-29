@@ -3,6 +3,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 // Get the `Gatsby plugin intl` config options to use when creating the posts and project pages.
 const config = require(`./gatsby-config`);
+// TODO Move this to the onPreInit phase.
 let gatsbyPluginIntlOptions;
 const gatsbyPluginIntlConfig = config.plugins.find(
   plugin => plugin.resolve === "gatsby-plugin-intl"

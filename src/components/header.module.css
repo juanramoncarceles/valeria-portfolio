@@ -30,7 +30,7 @@
   font-size: 2rem;
 }
 
-.site-title > a {
+.site-title:hover {
   text-decoration: none;
 }
 
@@ -41,16 +41,29 @@
   font-size: 0.9em;
 }
 
-.nav > a {
-  padding: 0.6rem;
-  text-decoration: none;
+.nav-links-wrapper {
+  padding-right: 1rem;
+  border-right: 1px solid #7d7d7d;
 }
 
-.nav > a[aria-current],
-.nav > a:hover {
+.nav-links-wrapper > a {
+  padding: 0.6rem;
+}
+
+.nav-links-wrapper > a[aria-current] {
   text-decoration: underline;
 }
 
-.nav > a:not(:first-child) {
+.nav-links-wrapper > a:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.other-controls {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.other-controls > *:not(:first-child) {
   margin-left: 1rem;
 }

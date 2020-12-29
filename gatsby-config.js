@@ -3,7 +3,7 @@ module.exports = {
     title: "Valeria Lovato",
     description: "Valeria Lovato's architecture portfolio.",
     author: "Valeria Lovato",
-    darkThemeSwitcher: false,
+    darkThemeSwitcher: true,
   },
   plugins: [
     "gatsby-plugin-react-helmet",

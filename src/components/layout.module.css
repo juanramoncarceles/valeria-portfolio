@@ -1,5 +1,15 @@
-#layoutWrapper {
+@import "../styles/vars.css";
+
+.layout-wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  color: var(--text-color);
+  background-color: var(--neutral-100);
+  transition: background-color 1s;
+}
+
+.layout-wrapper.dark {
+  color: var(--text-color-inverted);
+  background-color: var(--neutral-700);
 }

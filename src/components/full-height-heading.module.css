@@ -1,7 +1,9 @@
+@import "../styles/vars.css";
+
 .root {
   min-height: 100vh;
   position: relative;
-  background-color: grey;
+  background-color: var(--neutral-400);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,5 +14,5 @@
   bottom: 2.5rem;
   left: 3rem;
   font-size: 5em;
-  color: #fff;
+  color: var(--text-color-inverted);
 }

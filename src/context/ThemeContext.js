@@ -35,7 +35,7 @@ const ThemeContextProvider = ({ children }) => {
   useEffect(() => {
     if (darkThemeSwitcher) {
       const isDark = JSON.parse(localStorage.getItem("isDark"));
-      if (isDark) {
+      if (isDark !== null) {
         setIsDark(isDark);
       } else if (supportsDarkMode()) {
         setIsDark(true);

@@ -6,11 +6,12 @@
 }
 
 .root.odd {
-  background-color: rgb(240, 240, 240);
+  background-color: var(--neutral-200);
+  transition: background-color 1s;
 }
 
 .dark.root.odd {
-  background-color: #1d1d1d;
+  background-color: var(--neutral-600);
 }
 
 .img {

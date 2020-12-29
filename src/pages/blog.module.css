@@ -49,16 +49,8 @@
   width: 100%;
 }
 
-.post-date {
-  /* color: gray; on light mode only */
-}
-
 .post-title {
   text-align: center;
-}
-
-.post-title:visited {
-  color: #fff; /*inherit?*/
 }
 
 .post-featured > .post-title {
