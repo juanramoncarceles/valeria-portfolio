@@ -51,9 +51,7 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
                 alt=""
               />
             </Link>
-            <time className={blogStyles.postDate} dateTime="2001-05-15">
-              {lastPost.frontmatter.date}
-            </time>
+            <time dateTime="">{lastPost.frontmatter.date}</time>
             <Link
               to={`${basePostPath}${lastPost.fields.slug}`}
               className={blogStyles.postTitle}
@@ -87,9 +85,7 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
                           alt=""
                         />
                       </Link>
-                      <time className={blogStyles.postDate} dateTime="">
-                        {node.frontmatter.date}
-                      </time>
+                      <time dateTime="">{node.frontmatter.date}</time>
                       <Link
                         to={`${basePostPath}${node.fields.slug}`}
                         className={blogStyles.postTitle}

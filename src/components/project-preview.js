@@ -3,9 +3,13 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 
+import { useTheme } from "../context/ThemeContext";
+
 import projPreviewStyle from "./project-preview.module.css";
 
 const ProjectPreview = ({ project, position, id }) => {
+  const { isDark } = useTheme();
+
   let subtitle;
   let excerpt;
 
@@ -20,7 +24,7 @@ const ProjectPreview = ({ project, position, id }) => {
 
   return (
     <article
-      className={`
+      className={`${isDark ? projPreviewStyle.dark : ""}
       ${projPreviewStyle.root} ${position % 2 === 1 ? projPreviewStyle.odd : ""}
     `}
       id={id}

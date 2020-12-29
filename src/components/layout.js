@@ -2,17 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
-import ThemeContext from "../context/ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 import SEO from "./seo";
 import Header from "./header";
 import Footer from "./footer";
 import FullHeightHeading from "./full-height-heading";
 
-import "../styles/reset.css";
 import "../styles/main.css";
 import layoutStyles from "./layout.module.css";
 
 const Layout = ({ children, pageTitle, fullHeightHeading, cssClass }) => {
+  const { isDark } = useTheme();
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -29,37 +30,34 @@ const Layout = ({ children, pageTitle, fullHeightHeading, cssClass }) => {
   };
 
   return (
-    <ThemeContext.Consumer>
-      {theme => (
-        <div
-          id={layoutStyles.layoutWrapper}
-          className={theme.dark ? "dark" : "light"}
-        >
-          <SEO title={capitalize(pageTitle)} />
-          <Header
-            siteTitle={data.site.siteMetadata.title}
-            above={!!fullHeightHeading}
+    <div
+      className={`${layoutStyles.layoutWrapper} ${
+        isDark ? layoutStyles.dark : ""
+      }`}
+    >
+      <SEO title={capitalize(pageTitle)} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        above={!!fullHeightHeading}
+      />
+      <main
+        style={{
+          flexGrow: 1,
+        }}
+        className={cssClass}
+      >
+        {fullHeightHeading ? (
+          <FullHeightHeading
+            pageTitle={pageTitle}
+            bgimg={fullHeightHeading.bgimg}
           />
-          <main
-            style={{
-              flexGrow: 1,
-            }}
-            className={cssClass}
-          >
-            {fullHeightHeading ? (
-              <FullHeightHeading
-                pageTitle={pageTitle}
-                bgimg={fullHeightHeading.bgimg}
-              />
-            ) : (
-              ""
-            )}
-            {children}
-          </main>
-          <Footer />
-        </div>
-      )}
-    </ThemeContext.Consumer>
+        ) : (
+          ""
+        )}
+        {children}
+      </main>
+      <Footer />
+    </div>
   );
 };
 
