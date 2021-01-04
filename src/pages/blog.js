@@ -4,10 +4,20 @@ import Img from "gatsby-image";
 import { Link as LinkIntl } from "gatsby-plugin-intl";
 
 import Layout from "../components/layout";
+import { useTheme } from "../context/ThemeContext";
 
 import blogStyles from "./blog.module.css";
 
 const Blog = ({ data: { allMarkdownRemark: posts } }) => {
+  const { isDark } = useTheme();
+
+  // Adding 'uncategorized' to posts without any category
+  posts.nodes.forEach(
+    post =>
+      post.frontmatter.categories ??
+      (post.frontmatter.categories = ["uncategorized"])
+  );
+
   const lastPost = posts.nodes[0];
 
   /*
@@ -19,7 +29,10 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
   const basePostPath = "/it/blog";
 
   return (
-    <Layout pageTitle="blog" cssClass={blogStyles.pageContainer}>
+    <Layout
+      pageTitle="blog"
+      cssClass={`${blogStyles.pageContainer} ${isDark ? blogStyles.dark : ""}`}
+    >
       <section className={blogStyles.headerSection}>
         <h1 className={blogStyles.pageTitle}>blog</h1>
         <p className={blogStyles.blogIntro}>
@@ -51,17 +64,27 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
                 alt=""
               />
             </Link>
-            <time dateTime="">{lastPost.frontmatter.date}</time>
+            <time
+              dateTime={lastPost.frontmatter.date}
+              className={blogStyles.postDate}
+            >
+              {lastPost.frontmatter.formattedDate}
+            </time>
             <Link
               to={`${basePostPath}${lastPost.fields.slug}`}
               className={blogStyles.postTitle}
             >
               <h2>{lastPost.frontmatter.title}</h2>
             </Link>
-            <p className={blogStyles.postExcerpt}>{posts.nodes[0].excerpt}</p>
-            <LinkIntl to="/" className={blogStyles.postCategory}>
-              Category
-            </LinkIntl>
+            <p className={blogStyles.postExcerpt}>{lastPost.excerpt}</p>
+            <ul className={blogStyles.postCategories}>
+              {lastPost.frontmatter.categories.map(category => (
+                <li key={category}>
+                  {category}
+                  {/* <LinkIntl to={`/category/${category}`}>{category}</LinkIntl> */}
+                </li>
+              ))}
+            </ul>
           </section>
 
           {posts.nodes.length > 1 ? (
@@ -85,7 +108,12 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
                           alt=""
                         />
                       </Link>
-                      <time dateTime="">{node.frontmatter.date}</time>
+                      <time
+                        dateTime={node.frontmatter.date}
+                        className={blogStyles.postDate}
+                      >
+                        {node.frontmatter.formattedDate}
+                      </time>
                       <Link
                         to={`${basePostPath}${node.fields.slug}`}
                         className={blogStyles.postTitle}
@@ -93,9 +121,14 @@ const Blog = ({ data: { allMarkdownRemark: posts } }) => {
                         <h2>{node.frontmatter.title}</h2>
                       </Link>
                       <p className={blogStyles.postExcerpt}>{node.excerpt}</p>
-                      <LinkIntl to="/" className={blogStyles.postCategory}>
-                        Category
-                      </LinkIntl>
+                      <ul className={blogStyles.postCategories}>
+                        {node.frontmatter.categories.map(category => (
+                          <li key={category}>
+                            {category}
+                            {/* <LinkIntl to={`/category/${category}`}>{category}</LinkIntl> */}
+                          </li>
+                        ))}
+                      </ul>
                     </article>
                   );
               })}
@@ -131,7 +164,8 @@ export const query = graphql`
         id
         frontmatter {
           title
-          date(formatString: "DD MMMM, YYYY")
+          date
+          formattedDate: date(formatString: "DD MMMM, YYYY", locale: "it")
           featuredImage {
             sharp: childImageSharp {
               fluid(maxWidth: 900) {
@@ -139,6 +173,7 @@ export const query = graphql`
               }
             }
           }
+          categories
         }
         fields {
           slug

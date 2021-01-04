@@ -32,17 +32,16 @@
   list-style-type: none;
   font-size: 14px;
   text-transform: uppercase;
-  color: var(--neutral-500);
+  color: rgb(15, 138, 110);
 }
 
 .categories > li:not(:first-child) {
   padding-left: 0.5rem;
   margin-left: 0.5rem;
-  border-left: 1px solid var(--neutral-300);
+  border-left: 1px solid;
 }
 
-.dark .date,
-.dark .categories {
+.dark .date {
   color: var(--neutral-300);
 }
 

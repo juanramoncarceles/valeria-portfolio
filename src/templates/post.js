@@ -79,7 +79,7 @@ export const query = graphql`
         title
         subtitle
         date
-        formattedDate: date(formatString: "MMMM Do, YYYY", locale: $lang)
+        formattedDate: date(formatString: "DD MMMM, YYYY", locale: $lang)
         featuredImage {
           sharp: childImageSharp {
             fluid(maxWidth: 800) {
