@@ -118,24 +118,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   `);
 
   posts.forEach(post => {
+    const postLang = post.fields.lang;
     // With `getMessages()` I replicate the `gatsby-plugin-intl` behavior but for posts, which are handled by me.
-    const messages = getMessages(
-      gatsbyPluginIntlOptions.path,
-      post.fields.lang
-    );
+    const messages = getMessages(gatsbyPluginIntlOptions.path, postLang);
     const postPath = `${
-      post.fields.lang === gatsbyPluginIntlOptions.defaultLanguage
-        ? ""
-        : post.fields.lang
+      postLang === gatsbyPluginIntlOptions.defaultLanguage ? "" : postLang
     }/blog${post.fields.slug}`;
     createPage({
       path: postPath,
       component: path.resolve("./src/templates/post.js"),
       context: {
         id: post.id,
+        lang: postLang,
         // `intl` makes gatsby-plugin-intl skip this page, otherwise creates a route for each lang code for each translation which is wrong.
         intl: {
-          language: post.fields.lang,
+          language: postLang,
           languages: gatsbyPluginIntlOptions.languages,
           routed: true,
           originalPath: `blog${post.fields.slug}`,

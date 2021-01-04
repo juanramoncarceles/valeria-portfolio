@@ -3,7 +3,6 @@ Bugs:
     ☐ Improve the current dark theme. For example when enabled in the home some post excerpts are not readable.
 
 Features:
-    ☐ Post template css styles.
     ☐ Make the excerpt automatic from the body text, by a max amount of characters?
     ☐ Implement post categories and category page.
     ☐ Implement going from one post page to the next/previous post page.
@@ -17,3 +16,4 @@ DONE:
     ✔ Multilingual @done(20-12-10 19:52)
     ✔ In the Blog page all posts in all languages are displayed. Instead they should be filtered by the current language. @done(20-12-28 21:12)
         Once this is done, force to always only show the posts in italian (regardless of the lang) since it will start with only italian posts.
+    ✔ Post template css styles. @done(21-01-04 19:17)

@@ -2,7 +2,7 @@
 
 html {
   box-sizing: border-box;
-  font-family: "Poiret One", "Arial", sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
 }
 
 *,
@@ -25,7 +25,14 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
-p {
+h1,
+h2 {
+  font-family: "Sulphur Point", "Arial", sans-serif;
+}
+
+p,
+blockquote,
+figure {
   margin: 0;
 }
 
