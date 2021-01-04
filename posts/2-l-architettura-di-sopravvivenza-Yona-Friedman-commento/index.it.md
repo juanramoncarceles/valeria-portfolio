@@ -1,10 +1,20 @@
 ---
-title: "L’ARCHITETTURA DI SOPRAVVIVENZA – Una filosofia della povertà"
+title: "L’ARCHITETTURA DI SOPRAVVIVENZA"
+subtitle: "Una filosofia della povertà"
 date: "2020-12-22"
 featuredImage: ./images/1-ville-spatiale-1958-1959.jpg
+featuredImageCaption: "Étude pour la ville spatiale, 1958-1959"
+categories: ["città del futuro", "letteratura"]
+resources:
+  - {
+      text: "YONA FRIEDMAN. Mobile Architecture, People’s Architecture, in occasione dell’esposizione del 2017 al MAXXI di Roma",
+      url: https://www.area-arch.it/yona-friedman-mobile-architecture-peoples-architecture/,
+    }
+  - {
+      text: "Commento alla figura e alle opere di Yona Friedman di Emmanuele Lo Giudice",
+      url: "https://www.archphoto.it/archives/4998",
+    }
 ---
-
-_Étude pour la ville spatiale, 1958-1959_
 
 In occasione dell’anniversario dell’accordo di Parigi sull’emergenza climatica, ho pensato che fosse interessante riprendere in mano il libro di Yona Friedman _“Architettura di sopravvivenza - Una filosofia della povertà”_. È un libro non molto lungo, ma incredibilmente denso di spunti di discussione e soprattutto è un libro del 1978 (aggiornato poi nel 2002 con una nuova edizione), che sembra stato scritto l’altro ieri.
 
@@ -26,7 +36,7 @@ Nella seconda parte del libro, l’autore mette in evidenza come l’**industria
 
 L’unica soluzione possibile è dunque l’adozione di un’**architettura di sopravvivenza**. La miglior definizione che ne viene data nel libro è probabilmente questa:
 
-**“l’architettura di sopravvivenza è essenzialmente il riconoscimento delle tecniche tradizionali semplici. È l’applicazione di un realismo rigoroso dell’arte di abitare la terra.”**
+> _“l’architettura di sopravvivenza è essenzialmente il riconoscimento delle tecniche tradizionali semplici. È l’applicazione di un realismo rigoroso dell’arte di abitare la terra.”_
 
 L’architettura di sopravvivenza facilita la produzione di cibo, l'approvvigionamento di acqua, la protezione climatica, la salvaguardia dei beni privati e collettivi, l’organizzazione dei rapporti sociali e la soddisfazione estetica di ciascuno. I suoi componenti fondamentali sono la struttura, il tetto ombrello e le divisioni leggere o mobili.
 
@@ -36,15 +46,15 @@ _I principai elementi dell'architettura di sopravvivenza: la struttura, il tetto
 
 Oltre ad adottare la filosofia dell’architettura di sopravvivenza, per poter far fronte alle difficoltà che ci si presenteranno, l’autore propone altre tre soluzioni:
 
-1- **L’agricoltura urbana**\_\_\*\*, che permetterebbe di garantire la produzione di cibo all’interno della città, quindi l’indipendenza dal campo agricolo in periferia;
+1. **L’agricoltura urbana**, che permetterebbe di garantire la produzione di cibo all’interno della città, quindi l’indipendenza dal campo agricolo in periferia;
 
-2- La **modificazione del regime alimentare**: considerare cibi che non siamo abituati a mangiare e altri metodi di preparazione del cibo (ad esempio fermentazione ed essiccazione) - aggiungerei come considerazione personale la riduzione del consumo di prodotti animali che, oltre ad essere più inquinanti, sono logisticamente impossibili da integrare alla città -
+2. La **modificazione del regime alimentare**: considerare cibi che non siamo abituati a mangiare e altri metodi di preparazione del cibo (ad esempio fermentazione ed essiccazione) - aggiungerei come considerazione personale la riduzione del consumo di prodotti animali che, oltre ad essere più inquinanti, sono logisticamente impossibili da integrare alla città -
 
-3- Lo spostamento della popolazione nelle **regioni a clima favorevole**, dove il tetto è l’unico elemento costruttivo essenziale.
+3. Lo spostamento della popolazione nelle **regioni a clima favorevole**, dove il tetto è l’unico elemento costruttivo essenziale.
 
 Concludendo, Yona Friedman considera che la sopravvivenza dipenda dall’adattamento delle nostre abitudini alle necessità della natura, non viceversa. In questo senso, l’**accettazione dell’imprevisto** è fondamentale e questo è in contrasto con una pianificazione centralizzata.
 
-**“L’architettura che cerchiamo è quella che lascia meno tracce possibili”.**
+> _“L’architettura che cerchiamo è quella che lascia meno tracce possibili.”_
 
 ![Città labirinto](./images/4-città-labirinto.jpg)
 
@@ -55,9 +65,3 @@ Sono moltissimi come vediamo i temi trattati nel libro, qui si è fatto solo un 
 ![African village](./images/5-africanvillage12.jpg)
 
 _Un esempio di decorazione pittorica in un villaggio africano. Uno dei punti toccati da Friedman è quello dell'estetica dell'edificio. Egli propone come forma di abbellimento la decorazione pittorica effimera, perchè è economica e facile da sostituire_
-
-Link utili:
-
-- [YONA FRIEDMAN. Mobile Architecture, People’s Architecture, in occasione dell’esposizione del 2017 al MAXXI di Roma](https://www.area-arch.it/yona-friedman-mobile-architecture-peoples-architecture/)
-
-- [Commento alla figura e alle opere di Yona Friedman di Emmanuele Lo Giudice](https://www.archphoto.it/archives/4998)

@@ -2,9 +2,42 @@
 title: "IL COHOUSING CI SALVERÀ DALLO SPRECO E DALLA SOLITUDINE?"
 date: "2020-12-12"
 featuredImage: ./images/1-evalanxmeer-aerial.jpg
+featuredImageCaption: "EVA-Lanxmeer, Cuemborg (NL)"
+resources:
+  - {
+      text: "Lange Eng Cohousing Community (DK) – Dorte Mandrup",
+      url: https://www.dortemandrup.dk/work/lange-eng-cohousing-community-denmark,
+    }
+  - { text: "Lilac cohousing a Leeds (UK)", url: https://www.lilac.coop/ }
+  - {
+      text: "Eva Lanxmeer, cohousing sostenibile a Culemborg (NL)",
+      url: http://www.eva-lanxmeer.nl/,
+    }
+  - {
+      text: "BwwB CPO Boschveld a Den Bosch (NL) di Archi3o",
+      url: https://archi3o.nl/portfolio/cpo_boschveld/,
+    }
+  - {
+      text: "MW2 HOOIPOLDER a Den Bosch (NL) – primo progetto di cohousing sostenibile nei Paesi Bassi (1987)",
+      url: https://archi3o.nl/portfolio/hooipolder-10/,
+    }
+  - {
+      text: '"Cohousing: the future of living?", di Benjamin Eysermans',
+      url: https://medium.com/when-the-bao-breaks/co-housing-the-future-of-living-c2a4368a9ede,
+    }
+  - {
+      text: 'TED Talk di Trish Becker-Hafnor "Cohousing: the future of community and human connection"',
+      url: https://www.youtube.com/watch?v=s9yRwn90aBw,
+    }
+  - {
+      text: "Intervista a Pietro Cobor, presidente di Cohousing.it",
+      url: https://www.wired.it/attualita/2017/10/26/andassi-vivere-cohousing/,
+    }
+  - {
+      text: "Consigli per creare un nuovo cohousing, dal Cohousing Association of the United States",
+      url: https://www.cohousing.org/create-cohousing/create-it/,
+    }
 ---
-
-_EVA-Lanxmeer, Cuemborg (NL)_
 
 Mi sono trovata spesso a ripensare alla bellissima esperienza che ho avuto modo di vivere nei Paesi Bassi, dove con [**Studio Pekka**](http://www.studiopekka.nl/) e [**Archi3o**](https://archi3o.nl/) ho collaborato alla nascita di un progetto di cohousing partecipativo sostenibile ([Soesterhof CPO Amersfoort](https://www.soesterhof.nl)). Fu una vera impresa arrivare ad un progetto definitivo, tuttavia una grande soddisfazione. Un po’ come riuscire ad incastrare tutti i pezzi di un puzzle.
 
@@ -33,18 +66,3 @@ L’architettura ha un ruolo molto importante nella buona riuscita di un cohousi
 _Lange Eng Cohousing Community, (DK)_
 
 Forse la tendenza è quella di scegliere sempre più spesso questo modo di abitare, visti i numeri crescenti di progetti di cohousing, o forse evolverà in qualcosa di diverso, destinato a densità maggiori e a minor occupazione di suolo, tuttavia in questo momento storico è una valdissima alternativa per ridurre l’impatto ambientale ed economico di un progetto residenziale e ridurre gli effetti della solitudine sulla società odierna.
-
-Alcuni progetti interessanti:
-
-- [Lange Eng Cohousing Community (DK) – Dorte Mandrup](https://www.dortemandrup.dk/work/lange-eng-cohousing-community-denmark)
-- [Lilac cohousing a Leeds (UK):](https://www.lilac.coop/)
-- [Eva Lanxmeer, cohousing sostenibile a Culemborg (NL)](http://www.eva-lanxmeer.nl/)
-- [BwwB CPO Boschveld a Den Bosch (NL) di Archi3o](https://archi3o.nl/portfolio/cpo_boschveld/)
-- [MW2 HOOIPOLDER a Den Bosch (NL) – primo progetto di cohousing sostenibile nei Paesi Bassi (1987)](https://archi3o.nl/portfolio/hooipolder-10/)
-
-Articoli e video:
-
-- [_“Cohousing: the future of living?”_, di Benjamin Eysermans](https://medium.com/when-the-bao-breaks/co-housing-the-future-of-living-c2a4368a9ede)
-- [TED Talk di Trish Becker-Hafnor _“Cohousing: the future of community and human connection”_](https://www.youtube.com/watch?v=s9yRwn90aBw)
-- [Intervista a Pietro Cobor, presidente di Cohousing.it](https://www.wired.it/attualita/2017/10/26/andassi-vivere-cohousing/?refresh_ce=)
-- [Consigli per creare un nuovo cohousing, dal Cohousing Association of the United States](https://www.cohousing.org/create-cohousing/create-it/)
