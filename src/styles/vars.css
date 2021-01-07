@@ -9,6 +9,6 @@
   --neutral-700: rgb(15, 15, 15);
   --neutral-800: rgb(0, 0, 0);
 
-  --text-color: var(--neutral-700);
+  --text-color: var(--neutral-600);
   --text-color-inverted: var(--neutral-100);
 }
