@@ -1,7 +1,12 @@
 import React from "react";
 import { IntlContextConsumer, useIntl, changeLocale } from "gatsby-plugin-intl";
 
+import { useTheme } from "../context/ThemeContext";
+
+import languageStyles from "./language.module.css";
+
 const Language = () => {
+  const { isDark } = useTheme();
   const intl = useIntl();
 
   const createLangOptions = languagesLocales => {
@@ -19,7 +24,9 @@ const Language = () => {
   };
 
   return (
-    <div>
+    <form
+      className={`${languageStyles.root} ${isDark ? languageStyles.dark : ""}`}
+    >
       <label htmlFor="lang" className="visually-hidden">
         Language
       </label>
@@ -45,7 +52,10 @@ const Language = () => {
           </select>
         )}
       </IntlContextConsumer>
-    </div>
+      <svg className={languageStyles.arrow} fill="currentColor">
+        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+      </svg>
+    </form>
   );
 };
 
