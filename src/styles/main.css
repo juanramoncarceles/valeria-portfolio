@@ -66,6 +66,10 @@ textarea {
   font: inherit;
 }
 
+select {
+  color: inherit;
+}
+
 button {
   padding: 0;
   border-style: none;
