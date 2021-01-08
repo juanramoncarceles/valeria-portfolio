@@ -1,15 +1,19 @@
 Bugs:
     ☐ If a page / post / project doesn't have a translation in a laguage it shouldn't show that language in the select.
-    ☐ Improve the current dark theme. For example when enabled in the home some post excerpts are not readable.
+      This affects only posts since those are the ones that should be really translated as a file. To fix this in the gatsby-node a resolver for a field called
+      translations should be created. The resolver should check how many index md files there are in the same post folder and to which lang correspond.
 
 Features:
     ☐ Make the excerpt automatic from the body text, by a max amount of characters?
-    ☐ Implement post categories and category page.
+    ☐ Create a page to list posts by category. Categories in posts should link to that page.
+        https://www.gatsbyjs.com/docs/adding-tags-and-categories-to-blog-posts/
+        Categories should have their slug equivalent to use them in the url.
     ☐ Implement going from one post page to the next/previous post page.
 
 Changes: 
     ☐ Look for an alternative for background images to auto optimize them.
         Use a regular image placed absolute or something like this: https://www.gatsbyjs.com/plugins/gatsby-background-image/
+    ☐ Since the best process for dark theme is to pass it to the layout component, maybe it should be handled from above, and in the css files use something like :global(.dark) .whatever
 
 
 DONE:
