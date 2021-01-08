@@ -8,6 +8,7 @@ import headerStyles from "./header.module.css";
 import Language from "./language";
 import ThemeSwitcher from "./themeSwitcher";
 
+// When above is true the header is transparent and positioned over a dark image.
 const Header = ({ siteTitle, above }) => {
   const intl = useIntl();
 
@@ -48,8 +49,8 @@ const Header = ({ siteTitle, above }) => {
             <Link to="/blog/">blog</Link>
           </nav>
           <div className={headerStyles.otherControls}>
-            <Language />
-            {darkThemeSwitcher ? <ThemeSwitcher /> : null}
+            <Language alwaysDark={above} />
+            {darkThemeSwitcher ? <ThemeSwitcher alwaysDark={above} /> : null}
           </div>
         </div>
       </div>

@@ -1,11 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { IntlContextConsumer, useIntl, changeLocale } from "gatsby-plugin-intl";
 
 import { useTheme } from "../context/ThemeContext";
 
 import languageStyles from "./language.module.css";
 
-const Language = () => {
+const Language = ({ alwaysDark }) => {
   const { isDark } = useTheme();
   const intl = useIntl();
 
@@ -25,7 +26,9 @@ const Language = () => {
 
   return (
     <form
-      className={`${languageStyles.root} ${isDark ? languageStyles.dark : ""}`}
+      className={`${languageStyles.root} ${
+        alwaysDark || isDark ? languageStyles.dark : ""
+      }`}
     >
       <label htmlFor="lang" className="visually-hidden">
         Language
@@ -57,6 +60,14 @@ const Language = () => {
       </svg>
     </form>
   );
+};
+
+Language.propTypes = {
+  alwaysDark: PropTypes.bool,
+};
+
+Language.defaultProps = {
+  alwaysDark: false,
 };
 
 export default Language;
