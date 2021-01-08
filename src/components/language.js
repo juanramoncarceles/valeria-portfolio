@@ -8,7 +8,7 @@ import languageStyles from "./language.module.css";
 
 const Language = ({ alwaysDark }) => {
   const { isDark } = useTheme();
-  const intl = useIntl();
+  const { formatMessage, defaultLocale } = useIntl();
 
   const createLangOptions = languagesLocales => {
     const options = [];
@@ -16,7 +16,7 @@ const Language = ({ alwaysDark }) => {
     languagesLocales.forEach(locale => {
       options.push(
         <option value={locale} key={locale}>
-          {intl.formatMessage({ id: locale })}
+          {formatMessage({ id: locale })}
         </option>
       );
     });
@@ -44,8 +44,7 @@ const Language = ({ alwaysDark }) => {
               let language = e.target.value;
               let to = "";
               if (ignore) {
-                language =
-                  language === intl.defaultLocale ? "" : language + "/";
+                language = language === defaultLocale ? "" : language + "/";
                 to = originalPath;
               }
               changeLocale(language, to);

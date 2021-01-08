@@ -10,10 +10,11 @@ import aboutStyles from "./about.module.css";
 import background from "../images/about-img.jpg";
 
 const About = ({ data: { file } }) => {
-  const intl = useIntl();
+  const { formatMessage } = useIntl();
+
   return (
     <Layout
-      pageTitle={intl.formatMessage({ id: "about.title" })}
+      pageTitle={formatMessage({ id: "about.title" })}
       fullHeightHeading={{ bgimg: background }}
     >
       <div className={aboutStyles.pageContainer}>
@@ -24,7 +25,7 @@ const About = ({ data: { file } }) => {
             alt="Valeria Lovato's profile picture."
           />
           <p className={aboutStyles.personalDescription}>
-            {intl.formatMessage({ id: "about.description" })}
+            {formatMessage({ id: "about.description" })}
           </p>
         </section>
 

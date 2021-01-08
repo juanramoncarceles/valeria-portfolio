@@ -10,7 +10,7 @@ import ThemeSwitcher from "./themeSwitcher";
 
 // When above is true the header is transparent and positioned over a dark image.
 const Header = ({ siteTitle, above }) => {
-  const intl = useIntl();
+  const { formatMessage } = useIntl();
 
   // Query to check if the dark theme should be available.
   const {
@@ -42,10 +42,8 @@ const Header = ({ siteTitle, above }) => {
         <div className={headerStyles.nav}>
           <nav className={headerStyles.navLinksWrapper}>
             <Link to="/">portfolio</Link>
-            <Link to="/about/">
-              {intl.formatMessage({ id: "about.title" })}
-            </Link>
-            <Link to="/contact/">{intl.formatMessage({ id: "contact" })}</Link>
+            <Link to="/about/">{formatMessage({ id: "about.title" })}</Link>
+            <Link to="/contact/">{formatMessage({ id: "contact" })}</Link>
             <Link to="/blog/">blog</Link>
           </nav>
           <div className={headerStyles.otherControls}>
